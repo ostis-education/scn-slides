@@ -1,0 +1,3 @@
+[submodule "scn-latex-plugin"]
+	path = scn-latex-plugin
+	url = https://github.com/ostis-ai/scn-latex-plugin
