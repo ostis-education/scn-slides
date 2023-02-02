@@ -1,14 +1,18 @@
 \NeedsTeXFormat{LaTeX2e}[2021-06-01]
 \ProvidesPackage{scn-slides}
-  [2022/02/02 v0.1.0 LaTeX package for SCn-code support]
+  [2022/02/02 v0.1.0 LaTeX package for SCn-code support in presentation slides]
 
 \RequirePackage[utf8]{inputenc}
 \RequirePackage[T2A,T1]{fontenc}
 \RequirePackage[english,main=russian]{babel}
 \renewcommand{\familydefault}{Tempora-TLF}
 
+\makeatletter
+\def\input@path{{scn-latex-plugin//}{scn-slides/scn-latex-plugin//}}
+\makeatother
+
 \RequirePackage{ragged2e}
-\RequirePackage{scn-latex-plugin/scn}
+\RequirePackage{scn}
 \setlength{\tabsize}{2em}
 
 \setbeamercolor{normal text}{fg=black}
