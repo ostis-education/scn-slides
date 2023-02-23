@@ -51,5 +51,11 @@
 \setbeamersize{text margin left=0.4cm,text margin right=0.4cm}
 
 \addtobeamertemplate{frametitle}{}{\vspace*{-1.4cm}}
+
+\newlist{textitemize}{itemize}{3}
+\setlist[textitemize,1]{labelsep=\tabsize-\bulletsize,leftmargin=\tabsize,label=$\bullet$}
+\setlist[textitemize,2]{labelsep=\tabsize-\bulletsize,leftmargin=\tabsize,after=\vspace{0.5em},label=$\bullet$}
+\setlist[textitemize,3]{labelsep=\tabsize-\bulletsize,leftmargin=\tabsize,after=\vspace{0.5em},label=$\bullet$}
+
 \endinput
 
