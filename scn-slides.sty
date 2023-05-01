@@ -1,6 +1,6 @@
-\NeedsTeXFormat{LaTeX2e}[2021-06-01]
+ \NeedsTeXFormat{LaTeX2e}[2021-06-01]
 \ProvidesPackage{scn-slides}
-  [2022/02/02 v0.1.0 LaTeX package for SCn-code support in presentation slides]
+[2022/02/02 v0.1.0 LaTeX package for SCn-code support in presentation slides]
 
 \RequirePackage[utf8]{inputenc}
 \RequirePackage[T2A,T1]{fontenc}
@@ -25,26 +25,35 @@
 
 \setbeamertemplate{title page}
 {
-\begin{minipage}{\textwidth}
-  \centering
-  \vspace{4em}
-  \usebeamerfont{title}\inserttitle\par
-  \usebeamerfont{subtitle}\insertsubtitle\par
-\end{minipage}
-
-  \vspace{10em}
-  \usebeamerfont{author}\insertauthor\par
-  \bigskip
-  \usebeamerfont{institute}\insertinstitute\par
+	\begin{minipage}{\textwidth}
+		\centering
+		\vspace{4em}
+		\usebeamerfont{title}\inserttitle\par
+		\usebeamerfont{subtitle}\insertsubtitle\par
+	\end{minipage}
+	
+	\vspace{10em}
+	\usebeamerfont{author}\insertauthor\par
+	\bigskip
+	\usebeamerfont{institute}\insertinstitute\par
 }
 
 \setbeamertemplate{itemize item}[bullet]
 
 \RequirePackage{tikz}
 \newcommand{\topline}{%
-  \tikz[remember picture,overlay] {%
-    \draw[black,line width=0.8mm]([yshift=-1.5cm]current page.north west)
-             -- ([yshift=-1.5cm,xshift=\paperwidth]current page.north west);}}
+	\tikz[remember picture,overlay] {%
+		\draw[black,line width=0.8mm]([yshift=-1.5cm]current page.north west)
+		-- ([yshift=-1.5cm,xshift=\paperwidth]current page.north west);}}
+
+
+
+%Draws topline with yshift = -(1.5cm + 0.55cm * arg). Works as %like as \topline when arg = 0.
+% Vasilich563
+\newcommand{\leveledtopline}[1]{%
+	\tikz[remember picture,overlay] {%
+		\draw[black,line width=0.8mm]([yshift=-(1.5cm + (0.55cm * #1))]current page.north west)
+		-- ([yshift=-(1.5cm + (0.55cm * #1)),xshift=\paperwidth]current page.north west);}}
 
 \setbeamertemplate{headline}{\hfill\includegraphics[width=1.5cm,height=1.5cm]{figures/ostis-logo-slides.png}\hspace{0.1cm}\vspace{-1.5cm}}
 
@@ -58,4 +67,3 @@
 \setlist[textitemize,3]{labelsep=\tabsize-\bulletsize,leftmargin=\tabsize,after=\vspace{0.5em},label=$\bullet$}
 
 \endinput
-
